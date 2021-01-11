@@ -1,0 +1,173 @@
+<section class="login-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 login-sec">
+        <h2 class="text-center">Sign Up</h2>
+        <form
+          [formGroup]="registerForm"
+          (ngSubmit)="register()"
+          novalidate
+          class="login-form"
+        >
+          <!-- First Name -->
+          <div class="form-group">
+            <mat-form-field class="w-100">
+              <input
+                matInput
+                placeholder="First Name"
+                formControlName="firstName"
+              />
+              <mat-error
+                *ngIf="registerForm.get('firstName').hasError('required')"
+              >
+               First Name is required.
+              </mat-error>
+              <mat-error
+                *ngIf="registerForm.get('firstName').hasError('pattern')"
+              >
+               Should not contain numbers.
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <!-- Last Name -->
+          <div class="form-group">
+            <mat-form-field class="w-100">
+              <input
+                matInput
+                placeholder="Last Name"
+                formControlName="lastName"
+              />
+              <mat-error
+                *ngIf="registerForm.get('lastName').hasError('required')"
+              >
+               Last Name is required.
+              </mat-error>
+              <mat-error
+                *ngIf="registerForm.get('lastName').hasError('pattern')"
+              >
+               Should not contain numbers.
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+           <!-- Age -->
+           <div class="form-group">
+            <mat-form-field class="w-100">
+              <input
+                matInput
+                placeholder="Age"
+                formControlName="age"
+              />
+              <mat-error
+                *ngIf="registerForm.get('age').hasError('required')"
+              >
+                Age is required.
+              </mat-error>
+              <mat-error
+              *ngIf="registerForm.get('age').hasError('pattern')"
+            >
+            Should be numeric field.
+            </mat-error>
+            </mat-form-field>
+          </div>
+
+
+          <!-- Email -->
+          <div class="form-group">
+            <mat-form-field class="w-100">
+              <input
+                matInput
+                placeholder="Email ID"
+                formControlName="emailId"
+              />
+              <mat-error
+                *ngIf="registerForm.get('emailId').hasError('required')"
+              >
+                Email ID is required.
+              </mat-error>
+              <mat-error *ngIf="registerForm.get('emailId').hasError('email')">
+                Email ID format is Invalid.
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <!-- Submit -->
+          <div class="form-check">
+            <button type="submit" class="btn btn-login float-right">
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-8 banner-sec">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-ride="carousel"
+          data-interval="4000"
+        >
+          <ol class="carousel-indicators">
+            <li
+              data-target="#carouselExampleIndicators"
+              data-slide-to="0"
+              class="active"
+              data-s
+            ></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img
+                class="d-block img-fluid"
+                src="https://static.pexels.com/photos/33972/pexels-photo.jpg"
+                alt="First slide"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <h2>Rigved technologies</h2>
+                  <p>
+                    Explore yourself..
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                class="d-block img-fluid"
+                src="https://images.pexels.com/photos/7097/people-coffee-tea-meeting.jpg"
+                alt="First slide"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <h2>Rigved technologies</h2>
+                  <p>
+                    Learn New technologies..
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                class="d-block img-fluid"
+                src="https://static.pexels.com/photos/33972/pexels-photo.jpg"
+                alt="First slide"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <h2>Rigved technologies</h2>
+                  <p>
+                    You'll be the NEW YOU !!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Form Status: {{ this.registerForm['status'] }}<br />
+  {{ this.registerForm.value | json }} -->
+</section>
